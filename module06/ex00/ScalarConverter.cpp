@@ -45,7 +45,7 @@ static bool print_special_cases(const std::string &str)
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: nanf" << std::endl;
-		std::cout << "double: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
 		return true;
 	}
 
@@ -112,7 +112,7 @@ static void print_float(double d)
 	}
 }
 
-static void printDouble(double d)
+static void print_double(double d)
 {
 	if (std::isnan(d))
 		std::cout << "double: nan\n";
@@ -133,3 +133,30 @@ static void printDouble(double d)
 	}
 }
 
+void ScalarConverter::convert(const std::string &literal)
+{
+	if (print_special_cases(literal))
+		return ;
+	
+	std::stringstream ss(literal);
+
+	double value;
+
+	ss >> value; 
+	if (ss.fail())
+	{
+		std::cout << "char: impossible\n";
+		std::cout << "int: impossible\n";
+		std::cout << "float: impossible\n";
+		std::cout << "double: impossible\n";
+		return ;
+	}
+
+	print_char(value);
+	print_int(value);
+	print_float(value);
+	print_double(value);
+}
+
+// creates a stream object, loads the contents of literal into it
+// receive the converted number and stores in value
