@@ -7,7 +7,7 @@ Base *generate(void)
 	std::srand(std::time(0));
 
 	int r = rand() % 3;
-	if (r)
+	if (r == 2)
 		return (new A);
 	else if (r == 1)
 		return (new B);
