@@ -7,6 +7,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <iomanip>
+#include <string>
 
 class BitcoinExchange
 {
@@ -23,7 +24,7 @@ public:
 	BitcoinExchange &operator=(const BitcoinExchange &other);
 	~BitcoinExchange();
 
-	int load_data(const std::string &file);
+	int load_data(const std::string &filename);
 	void process_input(const std::string file);
 	double get_rate(const std::string &date) const;
 };
