@@ -5,7 +5,6 @@
 #include <deque>
 #include <cstdlib>
 #include <climits>
-#include <algorithm>
 #include <ctime>
 #include <string>
 #include <sstream>
