@@ -8,6 +8,7 @@
 #include <ctime>
 #include <string>
 #include <sstream>
+#include <algorithm>
 
 class PmergeMe
 {
@@ -22,11 +23,13 @@ private:
 	void binaryInsertDeque(std::deque<int> &deq, int value);
 
 	bool valid_number(const std::string &str);
-	std::vector<int> generate(int n);
+
 public:
 	PmergeMe();
 	~PmergeMe();
-
+	// bool hasDuplicatesVector(std::vector<int> vect);
+	// bool hasDuplicatesDeque(std::deque<int> deq);
+	
 	void process(char **argv);
 };
 
@@ -45,4 +48,16 @@ https://dev.to/emuminov/human-explanation-and-step-by-step-visualisation-of-the-
 
 book by Donald Knuth (vol 3, page 184)
 https://vivekupadhyay125.wordpress.com/wp-content/uploads/2013/08/donald-e-knuth-the-art-of-computer-programming-vol-3.pdf
+*/
+
+/* EXAMPLE */
+/* vect = [2, 5, 8, 12]
+value = 7
+
+left = 0
+right = 4
+middle = 2
+vect[2] = 8
+
+8 >= 7 -> move right
 */
